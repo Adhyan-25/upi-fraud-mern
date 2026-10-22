@@ -1,0 +1,7 @@
+# Runtime dependencies of the Python detection service
+flask>=3.0
+pandas>=2.2
+numpy>=1.26
+networkx>=3.2      # simple_cycles(length_bound=...) needs networkx >= 3.1
+scikit-learn>=1.4
+gunicorn>=22.0     # production WSGI server used by the Dockerfile

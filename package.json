@@ -1,0 +1,20 @@
+{
+  "name": "upi-fraud-detector-mern",
+  "version": "1.0.0",
+  "private": true,
+  "description": "UPI Fraud Pattern Detector - MERN app (MongoDB, Express, React, Node) with a Python detection microservice",
+  "scripts": {
+    "install:all": "npm install && npm --prefix server install && npm --prefix client install && pip install -r detection-service/requirements.txt",
+    "dev": "concurrently -k -n detect,api,web -c yellow,green,cyan \"npm run dev:detection\" \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:detection": "cd detection-service && python -m detection.app",
+    "dev:server": "npm --prefix server run dev",
+    "dev:client": "npm --prefix client run dev",
+    "test": "npm run test:detection && npm run test:server",
+    "test:detection": "cd detection-service && python -m unittest discover -s tests -t .",
+    "test:server": "npm --prefix server test",
+    "build": "npm --prefix client run build"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1"
+  }
+}

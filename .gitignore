@@ -1,0 +1,15 @@
+# dependencies
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+# build output
+client/dist/
+# local secrets and generated data
+.env
+server/.env
+detection-service/data/
+# OS / editor noise
+.DS_Store
+.idea/
+.vscode/
